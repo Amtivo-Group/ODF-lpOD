@@ -5,14 +5,38 @@
 #       Author: Jean-Marie Gouarné <jean-marie.gouarne@online.fr>
 #
 #=============================================================================
-use     5.010_001;
+use     5.010001;
 use     strict;
 #=============================================================================
 #       The main module for the lpOD Project
 #=============================================================================
 package ODF::lpOD;
-our $VERSION                    =       "1.127";
-use constant PACKAGE_DATE       =>      "2023-04-03T22:39:00";
+
+# ABSTRACT:  OpenDocument Management Interface
+
+our $VERSION = '9.99';  # VERSION (overwritten by Dist::Zilla)
+our $DATE = 'dev'; # DATE
+
+#use constant PACKAGE_DATE       =>      "2023-04-03T22:39:00";
+sub PACKAGE_DATE() { $DATE }
+
+#  These are the overall distribution version number and release date,
+#  provided at build time by Dist::Zilla OurPkgVersion and OurDate
+#
+#  Note: Many other $ VERSION variables and PACKAGE_DATE constants also
+#  exist, one for each package in the distribution (e.g. ODF::lpOD::Element,
+#  ODF::lpOD::TextNode, etc. etc.) which probably are not up-to-date 
+#  (mostly inherited from ODF::lpOD 1.127).
+
+#  FIXME: Is an independent version & date needed for every package?
+#
+#  Perhaps the packages were once maintained by different people, but now it
+#  seems burdensome to maintain them, and pointless to have them at all
+#  if they aren't maintained.
+#  --> We could eliminate the package-level versions & dates, or replace
+#  them with #VERSION and #DATE, to be replaced at build-time with a common
+#  distribution version and release date.
+
 use ODF::lpOD::Common;
 #-----------------------------------------------------------------------------
 use ODF::lpOD::Document;
