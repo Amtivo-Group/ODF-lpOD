@@ -527,11 +527,11 @@ sub     get_style
                         {
                         return $self->get_outline_style;
                         }
-                        else
+                    else
                         {
                         return $self->get_default_style($family);
                         }
-                    }
+                }
         my $style; my $xp;
         my $f = $family; $f =~ s/[ _]/-/g;
         if ($family eq 'list')
@@ -539,7 +539,7 @@ sub     get_style
                 $xp =   '//text:list-style[@style:name="'       .
                         $name . '"]';
                 }
-        elsif ($family eq 'master' || $family eq 'page-layout')
+        elsif ($family =~ /(master|page-layout)/)
                 {
                 $xp =   '//style:' . $f . '[@style:name="'      .
                         $name . '"]';
@@ -797,7 +797,7 @@ sub     insert_style
                 {
                 return $self->insert_regular_style($style, %opt);
                 }
-        elsif ($family =~ /^(list|master|page layout)$/)
+        elsif ($family =~ /(list|master|page layout)/)
                 {
                 return $self->insert_special_style($style, %opt);
                 }
