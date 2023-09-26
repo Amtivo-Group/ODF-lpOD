@@ -1,3 +1,5 @@
+=encoding UTF-8
+
 =head1	NAME
 
 ODF::lpOD::Common - Common utilities provided by the Perl lpOD library

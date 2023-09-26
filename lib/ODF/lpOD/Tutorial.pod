@@ -1,3 +1,5 @@
+=encoding UTF-8
+
 =head1	NAME
 
 ODF::lpOD::Tutorial - A few basic recipes about lpOD

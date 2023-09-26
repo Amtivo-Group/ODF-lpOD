@@ -5,7 +5,7 @@
 #       Author: Jean-Marie Gouarné <jean.marie.gouarne@online.fr>
 #
 #=============================================================================
-use     5.010_001;
+use     5.010001;
 use     strict;
 use     experimental    'smartmatch';
 #=============================================================================
@@ -2312,6 +2312,10 @@ sub     not_allowed
         alert "Not allowed for this $tag ($class) element";
         return undef;
         }
+
+# Avoid "Unknown method DESTROY" warnings from AUTOLOAD, which gets called
+# when objects are being deleted.
+sub DESTROY {}  # https://rt.cpan.org/Public/Bug/Display.html?id=97977
 
 #=============================================================================
 package ODF::lpOD::TextNode;
