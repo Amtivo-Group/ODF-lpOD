@@ -1,3 +1,5 @@
+=encoding UTF-8
+
 =head1	NAME
 
 ODF::lpOD - An OpenDocument management interface
